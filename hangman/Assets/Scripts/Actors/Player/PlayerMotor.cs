@@ -34,6 +34,7 @@ public class PlayerMotor : ActorBase
             isCrouching = false;
 
 
+
         Move(input);
 
         UpdateColliderSize();
@@ -102,6 +103,11 @@ public class PlayerMotor : ActorBase
             animator.SetTrigger("playerJump");
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpHeight);
         }
+        if ((Input.GetButtonUp("Jump") || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) && rb2d.velocity.y > 0)
+        {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y / 1.5f);
+        }
+
     }
 
     private void OnDrawGizmosSelected()
