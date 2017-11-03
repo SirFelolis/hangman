@@ -37,6 +37,7 @@ public class SpawnPoint : MonoBehaviour
         if (enemyInstance == null)
         {
             enemyInstance = Instantiate(enemy, transform.position, Quaternion.identity);
+            enemyInstance.GetComponent<StateController>().SetupAI(true);
             doSpawnEnemy = false;
         }
 /*        else if (!enemyInstance.activeSelf)

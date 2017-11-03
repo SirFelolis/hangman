@@ -121,7 +121,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
-        time: 0.125
+        time: 0
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -490,7 +490,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
-        time: 0.125
+        time: 0
         value: 0
         inSlope: Infinity
         outSlope: Infinity

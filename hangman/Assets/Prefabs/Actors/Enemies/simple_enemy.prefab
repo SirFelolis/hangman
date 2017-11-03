@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 50315770570338078}
   - component: {fileID: 61622630024563804}
   - component: {fileID: 114872505644781766}
+  - component: {fileID: 114234338983663634}
   - component: {fileID: 95563928507124536}
   m_Layer: 12
   m_Name: simple_enemy
@@ -161,6 +162,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114234338983663634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1648356289500010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d34e105ad47df341b93f88fc498d662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: {fileID: 11400000, guid: 4636bcb7994c8b648bcea8a4c54501ce, type: 2}
+  enemyStats: {fileID: 11400000, guid: df316d8e323762d468e87ad7cfb876d6, type: 2}
+  minTurnDistFromWallOrEdge: 0.5
+  rbody: {fileID: 0}
 --- !u!114 &114872505644781766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -173,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
-  invincibleTime: 0.1
+  invincibleTime: 0.5
 --- !u!212 &212174711295638074
 SpriteRenderer:
   m_ObjectHideFlags: 1

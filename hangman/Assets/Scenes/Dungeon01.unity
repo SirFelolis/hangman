@@ -4717,9 +4717,7 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1217770746}
     m_ColliderPaths:
-    - - X: 30720000000
-        Y: 7040000000
-      - X: 29440000000
+    - - X: 29440000000
         Y: 7040000000
       - X: 29440000000
         Y: 6080000000
@@ -4777,6 +4775,8 @@ CompositeCollider2D:
         Y: 0
       - X: 30720000000
         Y: 0
+      - X: 30720000000
+        Y: 7040000000
   m_CompositePaths:
     m_Paths:
     - - {x: 3072, y: 704}
@@ -5117,7 +5117,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4048649701372314, guid: f74120c1487b8b44aa3e0ab6c920e935, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 160
+      value: 960
       objectReference: {fileID: 0}
     - target: {fileID: 4048649701372314, guid: f74120c1487b8b44aa3e0ab6c920e935, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5146,6 +5146,11 @@ Prefab:
     - target: {fileID: 4048649701372314, guid: f74120c1487b8b44aa3e0ab6c920e935, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 70918333776969414, guid: f74120c1487b8b44aa3e0ab6c920e935,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f74120c1487b8b44aa3e0ab6c920e935, type: 2}
