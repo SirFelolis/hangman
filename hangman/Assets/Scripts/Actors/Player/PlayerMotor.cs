@@ -9,7 +9,6 @@ public class PlayerMotor : ActorBase
 
     private bool isCrouching = false;
 
-
     private void OnTriggerEnter2D( Collider2D collision )
     {
         if (collision.CompareTag("EnemyHurtbox"))

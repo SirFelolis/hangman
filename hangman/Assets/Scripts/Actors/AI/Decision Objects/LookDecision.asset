@@ -8,9 +8,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84b48fb2c94f41f48a601b1fbe6eb35f, type: 3}
-  m_Name: player_kick
+  m_Script: {fileID: 11500000, guid: 65e672df72f06864db9cf504b2d70643, type: 3}
+  m_Name: LookDecision
   m_EditorClassIdentifier: 
-  name: playerKick
-  damage: 4
-  moveDirection: {x: 16, y: 0}

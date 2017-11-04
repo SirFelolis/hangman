@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyStats : ScriptableObject
 {
     public float moveSpeed = 100f;
+    public float lookRange = 32 * 5;
 
     public int attackDamage = 2;
 

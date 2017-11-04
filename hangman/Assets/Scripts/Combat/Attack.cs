@@ -8,4 +8,6 @@ public class Attack : ScriptableObject
     new public string name = "Attack name";
 
     public int damage;
+
+    public Vector2 moveDirection;
 }

@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject enemy;
+    public GameObject enemy;
 
-    [SerializeField]
-    private bool respawn = true;
+    public bool respawn = true;
 
     private bool doSpawnEnemy = true;
 

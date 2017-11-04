@@ -45,16 +45,22 @@ public class GameManager : MonoBehaviour
     {
         foreach (GameObject enemy in globalListEnemies)
         {
+            if (enemy == null)
+            {
+                globalListEnemies.Remove(enemy);
+                return;
+            }
+
             Vector3 viewPos = Camera.main.WorldToViewportPoint(enemy.transform.position);
             if ((viewPos.x < 1 && viewPos.x > 0) && (viewPos.y < 1 && viewPos.y > 0) && viewPos.z > 0)
             {
                 enemy.GetComponent<SpriteRenderer>().enabled = true;
-                enemy.GetComponent<ActorBase>().enabled = true;
+                enemy.GetComponent<StateController>().enabled = true;
             }
             else
             {
                 enemy.GetComponent<SpriteRenderer>().enabled = false;
-                enemy.GetComponent<ActorBase>().enabled = false;
+                enemy.GetComponent<StateController>().enabled = false;
             }
         }
     }
@@ -81,7 +87,7 @@ public class GameManager : MonoBehaviour
         prevSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
-    private void FindEnemies()
+    public void FindEnemies()
     {
         globalListEnemies.Clear();
 
