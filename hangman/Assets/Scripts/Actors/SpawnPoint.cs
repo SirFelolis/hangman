@@ -24,7 +24,7 @@ public class SpawnPoint : MonoBehaviour
                     Destroy(gameObject);
             }
         }
-        else
+        else if (enemyInstance == null)
         {
             doSpawnEnemy = true;
         }
