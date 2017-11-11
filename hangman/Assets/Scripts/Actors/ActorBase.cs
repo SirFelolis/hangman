@@ -35,13 +35,13 @@ public class ActorBase : MonoBehaviour
     protected void CheckGrounded()
     {
         RaycastHit2D hit1 = Physics2D.Raycast(
-            transform.position - new Vector3((GetComponent<BoxCollider2D>().size.x / 2f) * facing, 0, 0),
-            Vector2.down, GetComponent<BoxCollider2D>().size.y / 2 + 0.05f,
+            transform.position - new Vector3((GetComponent<BoxCollider2D>().size.x / 3) * facing, 0, 0),
+            Vector2.down, GetComponent<BoxCollider2D>().size.y / 1.5f,
             whatIsGround);
 
         RaycastHit2D hit2 = Physics2D.Raycast(
-            transform.position - new Vector3((GetComponent<BoxCollider2D>().size.x / 2f) * -facing, 0, 0),
-            Vector2.down, GetComponent<BoxCollider2D>().size.y / 2 + 0.05f,
+            transform.position - new Vector3((GetComponent<BoxCollider2D>().size.x / 3f) * -facing, 0, 0),
+            Vector2.down, GetComponent<BoxCollider2D>().size.y / 1.5f,
             whatIsGround);
 
         if (hit1 || hit2)
@@ -52,8 +52,13 @@ public class ActorBase : MonoBehaviour
         {
             isGrounded = false;
         }
+
+        Vector2 colliderSize = GetComponent<BoxCollider2D>().size;
+
+        Debug.DrawRay(transform.position - new Vector3((colliderSize.x / 3f) * facing, 0, 0), new Vector2(0, -(colliderSize.y / 1.5f)));
+        Debug.DrawRay(transform.position - new Vector3((colliderSize.x / 3f) * -facing, 0, 0), new Vector2(0, -(colliderSize.y / 1.5f)));
     }
-    
+
     // Reset the actor. Used on respawn.
     public virtual void Reset()
     {

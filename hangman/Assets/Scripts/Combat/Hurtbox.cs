@@ -12,7 +12,6 @@ public class Hurtbox : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<ActorHealth>().TakeDamage(attack.damage);
-            Debug.Log("Damaging enemy");
         }
     }
 }

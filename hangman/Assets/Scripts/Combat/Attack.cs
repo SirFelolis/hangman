@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New attack", menuName = "Attack")]
-public class Attack : ScriptableObject
+public abstract class Attack : ScriptableObject
 {
-    new public string name = "Attack name";
+    new public string name = "";
+
+    public AnimationClip animation;
 
     public int damage;
 
     public Vector2 moveDirection;
+
+    public bool stopJump;
+
+    public bool stopMove;
+
+    public abstract bool Condition(Vector2 input);
 }

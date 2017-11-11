@@ -52,15 +52,9 @@ public class GameManager : MonoBehaviour
             }
 
             Vector3 viewPos = Camera.main.WorldToViewportPoint(enemy.transform.position);
-            if ((viewPos.x < 1 && viewPos.x > 0) && (viewPos.y < 1 && viewPos.y > 0) && viewPos.z > 0)
+            if ((viewPos.x > 1.05f || viewPos.x < -0.05f) || (viewPos.y > 1.05f || viewPos.y < -0.05f))
             {
-                enemy.GetComponent<SpriteRenderer>().enabled = true;
-                enemy.GetComponent<StateController>().enabled = true;
-            }
-            else
-            {
-                enemy.GetComponent<SpriteRenderer>().enabled = false;
-                enemy.GetComponent<StateController>().enabled = false;
+                Destroy(enemy);
             }
         }
     }

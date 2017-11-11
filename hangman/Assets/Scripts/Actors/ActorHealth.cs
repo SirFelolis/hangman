@@ -17,6 +17,8 @@ public class ActorHealth : MonoBehaviour
 
     private SpriteRenderer spriteRend;
 
+    public GameObject hitbox;
+
     private void Awake()
     {
         spriteRend = GetComponent<SpriteRenderer>();
@@ -29,8 +31,8 @@ public class ActorHealth : MonoBehaviour
 
     public void TakeDamage( int damage )
     {
-        if (invincible)
-            return;
+//        if (invincible)
+//            return;
 
         health -= damage;
 
@@ -64,10 +66,12 @@ public class ActorHealth : MonoBehaviour
         }
     }
 
-    IEnumerator InvincibleTime()
+    public IEnumerator InvincibleTime()
     {
         invincible = true;
+        hitbox.SetActive(false);
         yield return new WaitForSeconds(invincibleTime);
+        hitbox.SetActive(true);
         invincible = false;
     }
 

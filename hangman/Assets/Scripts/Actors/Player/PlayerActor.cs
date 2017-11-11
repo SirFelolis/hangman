@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerMotor : ActorBase
+public class PlayerActor : ActorBase
 {
     [SerializeField]
     private Vector2 colliderSizeStanding = new Vector2(1, 2);
@@ -9,36 +9,72 @@ public class PlayerMotor : ActorBase
 
     private bool isCrouching = false;
 
+    public GameObject dustKick;
+
+    public Transform feetTransform;
+
+    private bool lastGrounded;
+
+    public bool canMove = true;
+
+    public bool canJump = true;
+
     private void OnTriggerEnter2D( Collider2D collision )
     {
         if (collision.CompareTag("EnemyHurtbox"))
         {
-            GetComponent<ActorHealth>().TakeDamage(2);
+            //            GetComponent<ActorHealth>().TakeDamage(2);
         }
     }
 
     private void Update()
     {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector2 input = GetInput();
 
         CheckGrounded();
 
         DoInteraction();
 
-        CheckJump(input);
+        if (canJump)
+            CheckJump(input);
 
-        if (input.y < 0 && isGrounded && Mathf.Abs(input.x) < 0.1f)
-            isCrouching = true;
-        else
-            isCrouching = false;
+        CheckCrouch(input);
 
-
+        if (lastGrounded != isGrounded)
+        {
+            CreateDustKick();
+        }
 
         Move(input);
+
+        GetComponent<AttackManager>().CheckAttack();
 
         UpdateColliderSize();
 
         UpdateAnimation(input);
+
+        animator.SetBool("playerGrounded", isGrounded);
+
+        lastGrounded = isGrounded;
+    }
+
+    private static Vector2 GetInput()
+    {
+        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+    }
+
+    private void CheckCrouch( Vector2 input )
+    {
+        if (input.y < 0 && isGrounded && Mathf.Abs(input.x) < 0.1f)
+            isCrouching = true;
+        else
+            isCrouching = false;
+    }
+
+    public void CreateDustKick()
+    {
+        var i = Instantiate(dustKick, feetTransform.position, Quaternion.Euler(new Vector3(-90, 0, 90)));
+        Destroy(i, i.GetComponent<ParticleSystem>().main.startLifetime.constant);
     }
 
 
@@ -63,7 +99,7 @@ public class PlayerMotor : ActorBase
         animator.SetFloat("absXInput", Mathf.Abs(input.x));
         animator.SetFloat("yVel", rb2d.velocity.y);
     }
-    
+
     // Check if the player should be interacting with something nearby, if so do it.
     private void DoInteraction()
     {
@@ -87,11 +123,14 @@ public class PlayerMotor : ActorBase
     // Moves the player horizontaly, very basic right now.
     private void Move( Vector2 input )
     {
-        if (input.x != 0 && isGrounded) facing = (int)input.x;
+        if (canMove)
+        {
+            if (input.x != 0 && isGrounded) facing = (int)input.x;
 
-        rb2d.velocity = new Vector2(input.x * moveSpeed.x, rb2d.velocity.y);
+            rb2d.velocity = new Vector2(input.x * moveSpeed.x, rb2d.velocity.y);
 
-        transform.localScale = new Vector3(facing, transform.localScale.y);
+            transform.localScale = new Vector3(facing, transform.localScale.y);
+        }
     }
 
     // Check if the player presses the jump button.
@@ -107,15 +146,5 @@ public class PlayerMotor : ActorBase
             rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y / 1.5f);
         }
 
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.green;
-
-        Vector2 colliderSize = GetComponent<BoxCollider2D>().size;
-
-        Gizmos.DrawRay(transform.position - new Vector3((colliderSize.x / 2f) * facing, 0, 0), new Vector2(0, -(colliderSize.y / 2) - 0.05f));
-        Gizmos.DrawRay(transform.position - new Vector3((colliderSize.x / 2f) * -facing, 0, 0), new Vector2(0, -(colliderSize.y / 2) - 0.05f));
     }
 }

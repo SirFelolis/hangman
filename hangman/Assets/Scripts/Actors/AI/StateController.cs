@@ -30,6 +30,14 @@ public class StateController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    private void OnTriggerStay2D( Collider2D collision )
+    {
+        if (collision.CompareTag("PlayerHitbox"))
+        {
+            collision.GetComponentInParent<ActorHealth>().TakeDamage(enemyStats.attackDamage);
+        }
+    }
+
     private void Update()
     {
         if (!aiActive)
@@ -37,7 +45,9 @@ public class StateController : MonoBehaviour
 
         currentState.UpdateState(this);
 
-        animator.SetFloat("xVel", Mathf.Abs(rbody.velocity.x));
+        if (animator != null)
+            animator.SetFloat("xVel", Mathf.Abs(rbody.velocity.x));
+
     }
 
     private void OnExitState()

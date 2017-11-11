@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1648356289500010}
   m_IsPrefabParent: 1
+--- !u!1 &1067946565007408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4922395060231288}
+  - component: {fileID: 70229932619738198}
+  m_Layer: 12
+  m_Name: Hitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1439377155510848
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,6 +75,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4733412962985924}
+  - {fileID: 4922395060231288}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -74,6 +91,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4466155541892832}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4922395060231288
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1067946565007408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4466155541892832}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50315770570338078
 Rigidbody2D:
@@ -145,6 +175,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 26, y: 32}
   m_EdgeRadius: 0
+--- !u!70 &70229932619738198
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1067946565007408}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 30, y: 30}
+  m_Direction: 0
 --- !u!95 &95563928507124536
 Animator:
   serializedVersion: 3
@@ -193,8 +238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a5bafc38ac46846bc920d223814ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 4
-  invincibleTime: 0.5
+  health: 10
+  invincibleTime: 10
+  hitbox: {fileID: 1067946565007408}
 --- !u!212 &212174711295638074
 SpriteRenderer:
   m_ObjectHideFlags: 1

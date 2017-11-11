@@ -8,10 +8,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a118162cdffef8649b1919c222ef923f, type: 3}
-  m_Name: Default Flying Enemy Stats
+  m_Script: {fileID: 11500000, guid: 2a1ecf6c3b0eadd4f91c32e4eccf896c, type: 3}
+  m_Name: player_nair
   m_EditorClassIdentifier: 
-  moveSpeed: 100
-  lookRange: 320
-  attackDamage: 4
-  maxHealth: 8
+  name: nair
+  animation: {fileID: 7400000, guid: 45356f58a6795d34ab01952a151d5b15, type: 2}
+  damage: 2
+  moveDirection: {x: 0, y: 0}
+  stopJump: 0
