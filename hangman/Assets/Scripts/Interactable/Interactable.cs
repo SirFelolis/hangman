@@ -5,8 +5,7 @@ public class Interactable : MonoBehaviour
 {
     public float radius = 96f;
 
-    [SerializeField]
-    private Vector2 interactTransform = Vector2.zero;
+    public Vector2 interactTransform = Vector2.zero;
 
     public Transform player;
 

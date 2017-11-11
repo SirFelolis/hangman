@@ -46,7 +46,7 @@ public class StateController : MonoBehaviour
         currentState.UpdateState(this);
 
         if (animator != null)
-            animator.SetFloat("xVel", Mathf.Abs(rbody.velocity.x));
+            animator.SetFloat("xVelAbs", Mathf.Abs(rbody.velocity.x));
 
     }
 

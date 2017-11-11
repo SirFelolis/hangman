@@ -127,7 +127,7 @@ public class DialogueManager : MonoBehaviour
             if (letters[i] != ' ')
             {
                 if (pitchVariation)
-                    audioSource.pitch = Random.Range(voicePitch - 0.2f, voicePitch + 0.2f);
+                    audioSource.pitch = Random.Range(voicePitch - 1.2f, voicePitch + 1.2f);
 
                 audioSource.pitch = voicePitch * pitchMultiplier;
                 audioSource.PlayOneShot(voiceSound[Random.Range(0, voiceSound.Length)]);

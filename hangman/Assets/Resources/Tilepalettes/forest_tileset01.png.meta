@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 2d5ed63b9e821b44eb6118f9f76439ae
-timeCreated: 1507390472
+timeCreated: 1510424466
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -22,6 +22,10 @@ TextureImporter:
     21300030: forest_tileset01_15
     21300032: forest_tileset01_16
     21300034: forest_tileset01_17
+    21300036: forest_tileset01_18
+    21300038: forest_tileset01_19
+    21300040: forest_tileset01_20
+    21300042: forest_tileset01_21
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -348,6 +352,62 @@ TextureImporter:
         serializedVersion: 2
         x: 160
         y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forest_tileset01_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forest_tileset01_19
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forest_tileset01_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forest_tileset01_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
         width: 32
         height: 32
       alignment: 0
