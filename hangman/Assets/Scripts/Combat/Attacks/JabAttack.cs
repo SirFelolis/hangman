@@ -3,7 +3,7 @@
 [CreateAssetMenu(menuName = "Combat/Attacks/Jab")]
 public class JabAttack : Attack
 {
-    public override bool Condition( Vector2 input, bool isGrounded )
+    public override bool Condition( Vector2 input, bool isGrounded, int facingDir )
     {
         return (Mathf.Round(input.y) == 0 && Mathf.Round(Mathf.Abs(input.x)) == 0) && isGrounded;
     }

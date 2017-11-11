@@ -29,12 +29,12 @@ public class AttackManager : MonoBehaviour
 
             foreach (var atk in attacks.moves)
             {
-                if (atk.Condition(input, GetComponent<PlayerActor>().IsGrounded))
+                if (atk.Condition(input, GetComponent<PlayerActor>().IsGrounded, (int)transform.localScale.x))
                 {
                     attack = atk;
                     if (!stoppingMovement)
                         StartCoroutine(StopMovement(attack.animation.length));
-//                    Debug.Log(attack.name);
+                    Debug.Log(attack.name);
                 }
             }
 

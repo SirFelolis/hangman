@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Moveset Player
   m_EditorClassIdentifier: 
   moves:
-  - {fileID: 11400000, guid: 8a8fad425d4ed514aac3511f2166ccdf, type: 2}
+  - {fileID: 11400000, guid: 04033e87e15004d4492c48d593b90f1e, type: 2}
   - {fileID: 11400000, guid: 27d49a34822d2b148bf0682888416274, type: 2}
+  - {fileID: 11400000, guid: 8a8fad425d4ed514aac3511f2166ccdf, type: 2}
   - {fileID: 11400000, guid: a6fda3956133dd941a6d604d8052e69c, type: 2}
