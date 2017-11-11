@@ -59,8 +59,6 @@ public class PlayerActor : ActorBase
 
         UpdateAnimation(input);
 
-        animator.SetBool("playerGrounded", isGrounded);
-
         lastGrounded = isGrounded;
     }
 
@@ -100,10 +98,11 @@ public class PlayerActor : ActorBase
     private void UpdateAnimation( Vector2 input )
     {
         animator.SetBool("playerCrouching", isCrouching);
-
+        animator.SetBool("playerGrounded", isGrounded);
 
         animator.SetFloat("absXInput", Mathf.Abs(input.x));
         animator.SetFloat("yVel", rb2d.velocity.y);
+        animator.SetFloat("yInput", input.y);
     }
 
     // Check if the player should be interacting with something nearby, if so do it.

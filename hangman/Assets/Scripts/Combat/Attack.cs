@@ -16,5 +16,7 @@ public abstract class Attack : ScriptableObject
 
     public bool stopMove;
 
+    public bool changeVelocity;
+
     public abstract bool Condition(Vector2 input, bool isGrounded, int facingDir);
 }

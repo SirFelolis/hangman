@@ -67,21 +67,28 @@ public class AttackManager : MonoBehaviour
             return;
         }
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position - Vector3.up * 16, Vector2.right * transform.localScale.x, 32f, 1 << LayerMask.NameToLayer("Ground"));
+        RaycastHit2D hit1 = Physics2D.Raycast(transform.position - Vector3.up * 16, Vector2.right * transform.localScale.x, 32f, 1 << LayerMask.NameToLayer("Ground"));
+        RaycastHit2D hit2 = Physics2D.Raycast(transform.position - Vector3.up * 16, Vector2.right * transform.localScale.x, 32f, 1 << LayerMask.NameToLayer("Ground"));
 
-        Debug.DrawRay(transform.position, Vector2.right * transform.localScale.x * 32f);
-
-        if (!hit)
+        if (!hit1 || !hit2)
         {
-            transform.position += new Vector3(attack.moveDirection.x * transform.localScale.x, attack.moveDirection.y);
+            if (attack.changeVelocity)
+            {
+                Rigidbody2D rb = GetComponent<Rigidbody2D>();
+                rb.velocity = new Vector2(attack.moveDirection.x * transform.localScale.x, attack.moveDirection.y);
+            }
+            else
+            {
+                transform.position += new Vector3(attack.moveDirection.x * transform.localScale.x, attack.moveDirection.y);
+            }
         }
-        else
+        else if (!attack.changeVelocity)
         {
-            transform.position += new Vector3((hit.distance - 16) * transform.localScale.x, 0);
+            transform.position += new Vector3((hit1.distance - 16) * transform.localScale.x, 0);
         }
     }
 
-    IEnumerator StopMovement(float time)
+    private IEnumerator StopMovement(float time)
     {
         stoppingMovement = true;
 
