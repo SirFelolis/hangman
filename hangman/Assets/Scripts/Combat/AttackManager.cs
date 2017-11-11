@@ -29,7 +29,7 @@ public class AttackManager : MonoBehaviour
 
             foreach (var atk in attacks.moves)
             {
-                if (atk.Condition(input))
+                if (atk.Condition(input, GetComponent<PlayerActor>().IsGrounded))
                 {
                     attack = atk;
                     if (!stoppingMovement)

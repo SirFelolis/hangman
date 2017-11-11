@@ -19,6 +19,12 @@ public class PlayerActor : ActorBase
 
     public bool canJump = true;
 
+    public bool IsGrounded
+    {
+        get { return isGrounded; }
+        set { return; }
+    }
+
     private void OnTriggerEnter2D( Collider2D collision )
     {
         if (collision.CompareTag("EnemyHurtbox"))
