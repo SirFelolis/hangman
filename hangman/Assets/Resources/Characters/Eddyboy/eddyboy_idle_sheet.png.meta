@@ -1,15 +1,17 @@
 fileFormatVersion: 2
-guid: cb3750d3befc4f34cb563b5f4d42708a
-timeCreated: 1510443226
+guid: 1cd5d269d9502f64d8da6172d360ee1b
+timeCreated: 1510447772
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: enemy_tallguy_walk01_sheet_0
-    21300002: enemy_tallguy_walk01_sheet_1
-    21300004: enemy_tallguy_walk01_sheet_2
-    21300006: enemy_tallguy_walk01_sheet_3
-    21300008: enemy_tallguy_walk01_sheet_4
-    21300010: enemy_tallguy_walk01_sheet_5
+    21300000: eddyboy_idle_sheet_0
+    21300002: eddyboy_idle_sheet_1
+    21300004: eddyboy_idle_sheet_2
+    21300006: eddyboy_idle_sheet_3
+    21300008: eddyboy_idle_sheet_4
+    21300010: eddyboy_idle_sheet_5
+    21300012: eddyboy_idle_sheet_6
+    21300014: eddyboy_idle_sheet_7
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -66,7 +68,7 @@ TextureImporter:
     maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -75,7 +77,7 @@ TextureImporter:
     maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -84,7 +86,7 @@ TextureImporter:
     maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,13 +95,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy_tallguy_walk01_sheet_0
+      name: eddyboy_idle_sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
-        height: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -107,13 +109,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy_tallguy_walk01_sheet_1
+      name: eddyboy_idle_sheet_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
-        height: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,13 +123,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy_tallguy_walk01_sheet_2
+      name: eddyboy_idle_sheet_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
-        height: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,13 +137,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy_tallguy_walk01_sheet_3
+      name: eddyboy_idle_sheet_3
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 64
-        height: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,13 +151,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy_tallguy_walk01_sheet_4
+      name: eddyboy_idle_sheet_4
       rect:
         serializedVersion: 2
         x: 256
         y: 0
         width: 64
-        height: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,13 +165,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy_tallguy_walk01_sheet_5
+      name: eddyboy_idle_sheet_5
       rect:
         serializedVersion: 2
         x: 320
         y: 0
         width: 64
-        height: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: eddyboy_idle_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: eddyboy_idle_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -13,9 +13,9 @@ public class LookDecision : Decision
 
     private bool Look (StateController controller)
     {
-        RaycastHit2D sightHit = Physics2D.Raycast(controller.transform.position, Vector2.right * controller.facing, controller.enemyStats.lookRange, 1 << LayerMask.NameToLayer("Player"));
+        RaycastHit2D sightHit = Physics2D.Raycast(controller.transform.position + Vector3.down * 16f, Vector2.right * controller.facing, controller.enemyStats.lookRange, 1 << LayerMask.NameToLayer("Player"));
 
-        Debug.DrawRay(controller.transform.position, Vector2.right * controller.facing * controller.enemyStats.lookRange);
+        Debug.DrawRay(controller.transform.position + Vector3.down * 16f, Vector2.right * controller.facing * controller.enemyStats.lookRange);
 
         if (sightHit && sightHit.collider.CompareTag("Player"))
         {

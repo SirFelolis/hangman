@@ -8,10 +8,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a118162cdffef8649b1919c222ef923f, type: 3}
-  m_Name: Default Enemy Stats
+  m_Script: {fileID: 11500000, guid: a887bbf660c685f45a1c8d89f864ce8d, type: 3}
+  m_Name: TimeDecision
   m_EditorClassIdentifier: 
-  moveSpeed: 70
-  lookRange: 96
-  attackDamage: 1
-  maxHealth: 2

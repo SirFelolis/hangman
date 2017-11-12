@@ -23,7 +23,6 @@ public class PatrolAction : Action
 
         if (hit1 || !hit2)
         {
-            Debug.Log("Turn");
             controller.facing = -controller.facing;
             controller.transform.localScale = new Vector3(controller.facing, controller.transform.localScale.y, controller.transform.localScale.z);
         }

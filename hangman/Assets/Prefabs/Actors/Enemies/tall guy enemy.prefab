@@ -137,18 +137,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -9}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 64, y: 96}
+    oldSize: {x: 64, y: 128}
     newSize: {x: 64, y: 96}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 31, y: 96}
+  m_Size: {x: 31, y: 110}
   m_EdgeRadius: 0
 --- !u!61 &61991278202456492
 BoxCollider2D:
@@ -162,7 +162,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -173,7 +173,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 27, y: 66}
+  m_Size: {x: 27, y: 100}
   m_EdgeRadius: 0
 --- !u!70 &70814496104687496
 CapsuleCollider2D:
@@ -187,8 +187,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 33, y: 100}
+  m_Offset: {x: 0, y: -5}
+  m_Size: {x: 40, y: 110}
   m_Direction: 0
 --- !u!95 &95081795900151194
 Animator:
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d34e105ad47df341b93f88fc498d662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: 4636bcb7994c8b648bcea8a4c54501ce, type: 2}
+  currentState: {fileID: 11400000, guid: a7f7fa8d094e6384483bebb283ca4565, type: 2}
   remainState: {fileID: 11400000, guid: ed3dbe05c7d042e44a6f25378e55423a, type: 2}
   enemyStats: {fileID: 11400000, guid: c31f5368dcac3b646aed189cc5cd8479, type: 2}
   minTurnDistFromWallOrEdge: 0.5
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  invincibleTime: 10
+  invincibleTime: 1
   hitbox: {fileID: 1581974518584888}
 --- !u!212 &212884476070691774
 SpriteRenderer:

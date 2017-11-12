@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: Wallmaster Stats
   m_EditorClassIdentifier: 
   moveSpeed: 50
-  lookRange: 160
-  attackDamage: 2
+  lookRange: 200
+  attackDamage: 5
   maxHealth: 10

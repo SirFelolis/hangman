@@ -238,8 +238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a5bafc38ac46846bc920d223814ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  invincibleTime: 10
+  health: 2
+  invincibleTime: 1
   hitbox: {fileID: 1067946565007408}
 --- !u!212 &212174711295638074
 SpriteRenderer:

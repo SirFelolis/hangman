@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ActorHealth : MonoBehaviour
 {
+    [HideInInspector]
     public int health = 16;
     //private int maxHealth;
 
@@ -31,8 +32,8 @@ public class ActorHealth : MonoBehaviour
 
     public void TakeDamage( int damage )
     {
-//        if (invincible)
-//            return;
+        if (invincible)
+            return;
 
         health -= damage;
 

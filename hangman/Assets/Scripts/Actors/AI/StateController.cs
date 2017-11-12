@@ -28,6 +28,8 @@ public class StateController : MonoBehaviour
     {
         rbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        
     }
 
     private void OnTriggerStay2D( Collider2D collision )
@@ -47,7 +49,12 @@ public class StateController : MonoBehaviour
 
         if (animator != null)
             animator.SetFloat("xVelAbs", Mathf.Abs(rbody.velocity.x));
+    }
 
+    public void Turn()
+    {
+        facing = -facing;
+        transform.localScale = new Vector3(facing, transform.localScale.y, transform.localScale.z);
     }
 
     private void OnExitState()
