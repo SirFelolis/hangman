@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "AI/Actions/Stand")]
+[CreateAssetMenu(menuName = "AI/Actions/Guard")]
 public class GuardedAction : Action
 {
     public override void Act( StateController controller )
