@@ -41,8 +41,8 @@ public class PlayerActor : ActorBase
 
         DoInteraction();
 
-        if (canJump)
-            CheckJump(input);
+//        if (canJump)
+//            CheckJump(input);
 
         CheckCrouch(input);
 

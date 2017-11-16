@@ -26,7 +26,6 @@ public class ParallaxManager : MonoBehaviour
             //            offset.y = (transform.position.y - (_mainCam.transform.position.y + 288)) * bg.values.scrollFactor.y + bg.values.offset.y;
 
             bg.GetComponent<Renderer>().material.mainTextureOffset = offset;
-//            bg.transform.position = new Vector3(_mainCam.transform.position.x, _mainCam.transform.position.y, bg.transform.position.z);
         }
     }
 }
