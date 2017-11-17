@@ -2,11 +2,6 @@
 
 public class PlayerActor : ActorBase
 {
-    [SerializeField]
-    private Vector2 colliderSizeStanding = new Vector2(1, 2);
-    [SerializeField]
-    private Vector2 colliderSizeAir = new Vector2(1, 2);
-
     private bool isCrouching = false;
 
     public GameObject dustKick;
@@ -41,8 +36,15 @@ public class PlayerActor : ActorBase
 
         DoInteraction();
 
-//        if (canJump)
-//            CheckJump(input);
+        //        if (canJump)
+        //            CheckJump(input);
+
+        if (input.y > 0)
+        {
+
+        }
+
+        ResizeColliderHeight();
 
         CheckCrouch(input);
 
@@ -55,11 +57,17 @@ public class PlayerActor : ActorBase
 
         GetComponent<AttackManager>().CheckAttack();
 
-        UpdateColliderSize();
-
         UpdateAnimation(input);
 
         lastGrounded = isGrounded;
+    }
+
+    private void ResizeColliderHeight()
+    {
+        Vector2 spriteSize = GetComponent<SpriteRenderer>().sprite.bounds.size;
+        BoxCollider2D col = GetComponent<BoxCollider2D>();
+
+        col.size = new Vector2(col.size.x, col.size.y + (spriteSize.y - col.size.y) / 10);
     }
 
     private static Vector2 GetInput()
@@ -81,19 +89,6 @@ public class PlayerActor : ActorBase
         Destroy(i, i.GetComponent<ParticleSystem>().main.startLifetime.constant);
     }
 
-
-    // Changes the size of the collider based on if you're moving or not.
-    private void UpdateColliderSize()
-    {
-        if (!isGrounded)
-        {
-            GetComponent<BoxCollider2D>().size = colliderSizeAir;
-        }
-        else
-        {
-            GetComponent<BoxCollider2D>().size = colliderSizeStanding;
-        }
-    }
 
     private void UpdateAnimation( Vector2 input )
     {
