@@ -39,11 +39,6 @@ public class PlayerActor : ActorBase
         //        if (canJump)
         //            CheckJump(input);
 
-        if (input.y > 0)
-        {
-
-        }
-
         ResizeColliderHeight();
 
         CheckCrouch(input);
@@ -57,7 +52,7 @@ public class PlayerActor : ActorBase
 
         GetComponent<AttackManager>().CheckAttack();
 
-        UpdateAnimation(input);
+//        UpdateAnimation(input);
 
         lastGrounded = isGrounded;
     }
@@ -67,7 +62,7 @@ public class PlayerActor : ActorBase
         Vector2 spriteSize = GetComponent<SpriteRenderer>().sprite.bounds.size;
         BoxCollider2D col = GetComponent<BoxCollider2D>();
 
-        col.size = new Vector2(col.size.x, col.size.y + (spriteSize.y - col.size.y) / 10);
+//        col.size = new Vector2(col.size.x, col.size.y + (spriteSize.y - col.size.y) / 10);
     }
 
     private static Vector2 GetInput()
@@ -96,7 +91,7 @@ public class PlayerActor : ActorBase
         animator.SetBool("playerGrounded", isGrounded);
 
         animator.SetFloat("absXInput", Mathf.Abs(input.x));
-        animator.SetFloat("yVel", rb2d.velocity.y);
+        animator.SetFloat("yVel", _rb2d.velocity.y);
         animator.SetFloat("yInput", input.y);
     }
 
@@ -127,7 +122,7 @@ public class PlayerActor : ActorBase
         {
             if (input.x != 0 && isGrounded) facing = (int)input.x;
 
-            rb2d.velocity = new Vector2(input.x * moveSpeed.x, rb2d.velocity.y);
+            _rb2d.velocity = new Vector2(input.x * moveSpeed.x, _rb2d.velocity.y);
 
             transform.localScale = new Vector3(facing, transform.localScale.y);
         }
@@ -139,11 +134,11 @@ public class PlayerActor : ActorBase
         if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && (isGrounded && !isCrouching))
         {
             animator.SetTrigger("playerJump");
-            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpHeight);
+            _rb2d.velocity = new Vector2(_rb2d.velocity.x, jumpHeight);
         }
-        if ((Input.GetButtonUp("Jump") || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) && rb2d.velocity.y > 0)
+        if ((Input.GetButtonUp("Jump") || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) && _rb2d.velocity.y > 0)
         {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y / 1.5f);
+            _rb2d.velocity = new Vector2(_rb2d.velocity.x, _rb2d.velocity.y / 1.5f);
         }
 
     }

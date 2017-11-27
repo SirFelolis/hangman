@@ -34,7 +34,6 @@ public class AttackManager : MonoBehaviour
                     attack = atk;
                     if (!stoppingMovement)
                         StartCoroutine(StopMovement(attack.animation.length));
-                    Debug.Log(attack.name);
                 }
             }
 

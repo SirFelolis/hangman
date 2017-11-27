@@ -23,11 +23,11 @@ public class ActorBase : MonoBehaviour
 
     protected bool isGrounded;
 
-    protected Rigidbody2D rb2d = null;
+    protected Rigidbody2D _rb2d = null;
 
     protected virtual void Awake()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        _rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
@@ -36,12 +36,12 @@ public class ActorBase : MonoBehaviour
     {
         RaycastHit2D hit1 = Physics2D.Raycast(
             transform.position - new Vector3((GetComponent<BoxCollider2D>().size.x / 3) * facing, 0, 0),
-            Vector2.down, GetComponent<BoxCollider2D>().size.y / 1.9f,
+            Vector2.down, GetComponent<BoxCollider2D>().size.y,
             whatIsGround);
 
         RaycastHit2D hit2 = Physics2D.Raycast(
             transform.position - new Vector3((GetComponent<BoxCollider2D>().size.x / 3f) * -facing, 0, 0),
-            Vector2.down, GetComponent<BoxCollider2D>().size.y / 1.9f,
+            Vector2.down, GetComponent<BoxCollider2D>().size.y,
             whatIsGround);
 
         if (hit1 || hit2)
@@ -55,8 +55,8 @@ public class ActorBase : MonoBehaviour
 
         Vector2 colliderSize = GetComponent<BoxCollider2D>().size;
 
-        Debug.DrawRay(transform.position - new Vector3((colliderSize.x / 3f) * facing, 0, 0), new Vector2(0, -(colliderSize.y / 1.9f)));
-        Debug.DrawRay(transform.position - new Vector3((colliderSize.x / 3f) * -facing, 0, 0), new Vector2(0, -(colliderSize.y / 1.9f)));
+        Debug.DrawRay(transform.position - new Vector3((colliderSize.x / 3f) * facing, 0, 0), new Vector2(0, -colliderSize.y));
+        Debug.DrawRay(transform.position - new Vector3((colliderSize.x / 3f) * -facing, 0, 0), new Vector2(0, -colliderSize.y));
     }
 
     // Reset the actor. Used on respawn.
