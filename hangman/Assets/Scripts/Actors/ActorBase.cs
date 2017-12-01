@@ -21,7 +21,7 @@ public class ActorBase : MonoBehaviour
 
     protected int facing = 1;
 
-    protected bool isGrounded;
+    protected bool isGrounded = false;
 
     protected Rigidbody2D _rb2d = null;
 

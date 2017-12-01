@@ -45,7 +45,7 @@ public class WalkAnimationBehaviour : MonoBehaviour
         for (int i = 0; i < feet.Length; i++)
         {
 
-            if ((feet[i].transform.position - (Vector3)worldFeetTargets[i]).magnitude > 8f && Time.time - lastMoveTime > legOffsetTime)
+            if ((feet[i].transform.position - (Vector3)worldFeetTargets[i]).magnitude > 4f && Time.time - lastMoveTime > legOffsetTime)
             {
                 lastMoveTime = Time.time;
                 StopCoroutine("MoveFoot");
@@ -65,9 +65,9 @@ public class WalkAnimationBehaviour : MonoBehaviour
         {
             lerpValue += Time.deltaTime * feetSpeedMultiplier;
 
-            feetPos.x = Mathf.Lerp(feetPos.x, target.x + _rb2d.velocity.x / 8, lerpValue); // That "8" value HAS TO BE THERE. And I don't know why. Sorry future-me.
+            feetPos.x = Mathf.Lerp(feetPos.x, target.x + _rb2d.velocity.x / 7, lerpValue); // That "8" value HAS TO BE THERE. And I don't know why. Sorry future-me.
 
-            feetPos.y = Mathf.Sin(lerpValue * Mathf.PI) + target.y;
+            feetPos.y = (Mathf.Sin(lerpValue * Mathf.PI) * 5) + target.y;
 
             feet[i].transform.position = feetPos;
 

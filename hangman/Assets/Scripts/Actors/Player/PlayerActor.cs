@@ -39,7 +39,7 @@ public class PlayerActor : ActorBase
         //        if (canJump)
         //            CheckJump(input);
 
-        ResizeColliderHeight();
+//        ResizeColliderHeight();
 
         CheckCrouch(input);
 
@@ -57,13 +57,13 @@ public class PlayerActor : ActorBase
         lastGrounded = isGrounded;
     }
 
-    private void ResizeColliderHeight()
+/*    private void ResizeColliderHeight() // Old code that isn't needed anymore
     {
         Vector2 spriteSize = GetComponent<SpriteRenderer>().sprite.bounds.size;
         BoxCollider2D col = GetComponent<BoxCollider2D>();
 
 //        col.size = new Vector2(col.size.x, col.size.y + (spriteSize.y - col.size.y) / 10);
-    }
+    }*/
 
     private static Vector2 GetInput()
     {
