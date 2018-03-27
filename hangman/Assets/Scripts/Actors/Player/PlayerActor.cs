@@ -42,10 +42,15 @@ public class PlayerActor : ActorBase
         DoInteraction();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         //        if (canJump)
         //            CheckJump(input);
 
 //        ResizeColliderHeight();
+=======
+//        if (canJump)
+//            CheckJump(input);
+>>>>>>> parent of 169bc30... Started working on growing mechanic
 =======
 //        if (canJump)
 //            CheckJump(input);
@@ -63,8 +68,11 @@ public class PlayerActor : ActorBase
         GetComponent<AttackManager>().CheckAttack();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //        UpdateAnimation(input);
 =======
+=======
+>>>>>>> parent of 169bc30... Started working on growing mechanic
         UpdateColliderSize();
 
         UpdateAnimation(input);
@@ -74,6 +82,7 @@ public class PlayerActor : ActorBase
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*    private void ResizeColliderHeight() // Old code that isn't needed anymore
     {
         Vector2 spriteSize = GetComponent<SpriteRenderer>().sprite.bounds.size;
@@ -82,6 +91,8 @@ public class PlayerActor : ActorBase
 //        col.size = new Vector2(col.size.x, col.size.y + (spriteSize.y - col.size.y) / 10);
     }*/
 
+=======
+>>>>>>> parent of 169bc30... Started working on growing mechanic
 =======
 >>>>>>> parent of 169bc30... Started working on growing mechanic
     private static Vector2 GetInput()
