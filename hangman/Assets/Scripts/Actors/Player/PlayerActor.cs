@@ -2,6 +2,11 @@
 
 public class PlayerActor : ActorBase
 {
+    [SerializeField]
+    private Vector2 colliderSizeStanding = new Vector2(1, 2);
+    [SerializeField]
+    private Vector2 colliderSizeAir = new Vector2(1, 2);
+
     private bool isCrouching = false;
 
     public GameObject dustKick;
@@ -36,10 +41,20 @@ public class PlayerActor : ActorBase
 
         DoInteraction();
 
+<<<<<<< HEAD
+<<<<<<< HEAD
         //        if (canJump)
         //            CheckJump(input);
 
 //        ResizeColliderHeight();
+=======
+//        if (canJump)
+//            CheckJump(input);
+>>>>>>> parent of 169bc30... Started working on growing mechanic
+=======
+//        if (canJump)
+//            CheckJump(input);
+>>>>>>> parent of 169bc30... Started working on growing mechanic
 
         CheckCrouch(input);
 
@@ -52,11 +67,22 @@ public class PlayerActor : ActorBase
 
         GetComponent<AttackManager>().CheckAttack();
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 //        UpdateAnimation(input);
+=======
+=======
+>>>>>>> parent of 169bc30... Started working on growing mechanic
+        UpdateColliderSize();
+
+        UpdateAnimation(input);
+>>>>>>> parent of 169bc30... Started working on growing mechanic
 
         lastGrounded = isGrounded;
     }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 /*    private void ResizeColliderHeight() // Old code that isn't needed anymore
     {
         Vector2 spriteSize = GetComponent<SpriteRenderer>().sprite.bounds.size;
@@ -65,6 +91,10 @@ public class PlayerActor : ActorBase
 //        col.size = new Vector2(col.size.x, col.size.y + (spriteSize.y - col.size.y) / 10);
     }*/
 
+=======
+>>>>>>> parent of 169bc30... Started working on growing mechanic
+=======
+>>>>>>> parent of 169bc30... Started working on growing mechanic
     private static Vector2 GetInput()
     {
         return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -84,6 +114,19 @@ public class PlayerActor : ActorBase
         Destroy(i, i.GetComponent<ParticleSystem>().main.startLifetime.constant);
     }
 
+
+    // Changes the size of the collider based on if you're moving or not.
+    private void UpdateColliderSize()
+    {
+        if (!isGrounded)
+        {
+            GetComponent<BoxCollider2D>().size = colliderSizeAir;
+        }
+        else
+        {
+            GetComponent<BoxCollider2D>().size = colliderSizeStanding;
+        }
+    }
 
     private void UpdateAnimation( Vector2 input )
     {

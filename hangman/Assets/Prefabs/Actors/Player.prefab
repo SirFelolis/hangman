@@ -262,6 +262,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1636450400157782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -276,6 +278,12 @@ Transform:
   m_GameObject: {fileID: 1579073801927894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3, y: 0, z: 0}
+=======
+  m_LocalPosition: {x: 384, y: 288, z: 0}
+>>>>>>> parent of 169bc30... Started working on growing mechanic
+=======
+  m_LocalPosition: {x: 384, y: 288, z: 0}
+>>>>>>> parent of 169bc30... Started working on growing mechanic
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4532096112910292}
@@ -467,7 +475,15 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
   m_Offset: {x: 0, y: -17}
+=======
+  m_Offset: {x: 0, y: -1}
+>>>>>>> parent of 169bc30... Started working on growing mechanic
+=======
+  m_Offset: {x: 0, y: -1}
+>>>>>>> parent of 169bc30... Started working on growing mechanic
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -478,7 +494,15 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
   m_Size: {x: 22, y: 60}
+=======
+  m_Size: {x: 30, y: 62}
+>>>>>>> parent of 169bc30... Started working on growing mechanic
+=======
+  m_Size: {x: 30, y: 62}
+>>>>>>> parent of 169bc30... Started working on growing mechanic
   m_EdgeRadius: 0
 --- !u!70 &70503502261770352
 CapsuleCollider2D:
